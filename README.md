@@ -39,6 +39,7 @@ Hệ thống này được xây dựng với các công nghệ và thư viện s
 ### Phân tích và trực quan hóa dữ liệu
 - **NumPy & Pandas:** Xử lý và quản lý dữ liệu.
 - **Matplotlib, Seaborn, Plotly:** Vẽ biểu đồ để theo dõi quá trình huấn luyện.
+- **Mô hình CNN & Xception:** Hiển thị kết quả huấn luyện và dự đoán trực quan.
 
 ### Xử lý ngôn ngữ tự nhiên (NLP) & Tổng hợp giọng nói
 - **gTTS (Google Text-to-Speech):** Chuyển đổi văn bản thành giọng nói sau khi nhận diện ký hiệu.
@@ -65,7 +66,7 @@ pip install opencv-python tensorflow keras numpy pandas scikit-learn matplotlib 
 Hệ thống có thể chạy trên Google Colab mà không cần cấu hình phức tạp. Chỉ cần tải notebook lên và chạy các ô lệnh theo thứ tự.
 
 #### Hướng dẫn chạy trên Google Colab:
-1. **Tải notebook lên Colab:** Mở [Google Colab](https://colab.research.google.com/), chọn `Upload` và tải file `.ipynb` của bạn lên.
+1. **Tải notebook lên Colab:** Mở [Google Colab](https://colab.research.google.com/drive/1168Y2dzgFTMZHrBGYqPZRC3TRRziJFbn?usp=sharing#scrollTo=XMNa-EjUUeR3).
 2. **Cài đặt thư viện:** Chạy ô lệnh sau trong Colab để cài đặt thư viện:
    ```python
    !pip install opencv-python tensorflow keras numpy pandas scikit-learn matplotlib seaborn plotly gtts
@@ -114,8 +115,3 @@ pip install -r requirements.txt
   !python app.py
   ```
 
-#### Trên máy tính cá nhân:
-- **Huấn luyện mô hình:**
-  ```sh
-  python train_model.py --model xception
-  ```
