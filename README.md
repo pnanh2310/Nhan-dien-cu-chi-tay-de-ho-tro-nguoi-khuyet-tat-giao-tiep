@@ -18,7 +18,7 @@ Với sự phát triển của trí tuệ nhân tạo (AI) và thị giác máy 
 ## 🛠️ Chức năng chính
 
 - **Chuẩn bị dữ liệu:** Tải bộ dữ liệu ASL Alphabet từ Kaggle, giải nén và sắp xếp dữ liệu theo từng lớp ký hiệu.
-- **Huấn luyện mô hình:** Chạy chương trình để huấn luyện mô hình nhận diện cử chỉ tay. Theo dõi quá trình học qua biểu đồ và ma trận nhầm lẫn.
+- **Huấn luyện mô hình:** Hỗ trợ các mô hình CNN, Xception để nhận diện cử chỉ tay. Theo dõi quá trình học qua biểu đồ và ma trận nhầm lẫn.
 - **Nhận diện từ ảnh:** Cung cấp một ảnh chứa cử chỉ tay. Hệ thống hiển thị ảnh và dự đoán ký hiệu.
 - **Nhận diện từ video:** Tải lên video có chứa cử chỉ tay. Hệ thống tách khung hình và dự đoán từng cử chỉ.
 - **Chuyển đổi giọng nói:** Sau khi nhận diện, hệ thống phát âm thanh tương ứng với ký hiệu.
@@ -30,6 +30,7 @@ Hệ thống này được xây dựng với các công nghệ và thư viện s
 
 ### Trí tuệ nhân tạo (AI) & Học sâu (Deep Learning)
 - **TensorFlow & Keras:** Huấn luyện và triển khai mô hình nhận diện cử chỉ tay.
+- **Mô hình CNN & Xception:** Dùng để học đặc trưng từ hình ảnh cử chỉ tay.
 - **Scikit-learn:** Hỗ trợ tiền xử lý dữ liệu và đánh giá mô hình.
 
 ### Thị giác máy tính (Computer Vision)
@@ -44,6 +45,12 @@ Hệ thống này được xây dựng với các công nghệ và thư viện s
 
 ### Lưu và sử dụng lại mô hình
 - TensorFlow/Keras hỗ trợ lưu mô hình đã huấn luyện để sử dụng lại mà không cần huấn luyện từ đầu.
+
+## 📚 Dữ liệu sử dụng
+
+Dữ liệu được sử dụng từ Kaggle:
+- **Bộ dữ liệu ASL Alphabet:** [Tải tại đây](https://www.kaggle.com/datasets/grassknoted/asl-alphabet)
+- Sau khi tải, giải nén và sắp xếp vào thư mục phù hợp.
 
 ## 📚 Các thư viện Python cần thiết
 
@@ -63,8 +70,13 @@ Hệ thống có thể chạy trên Google Colab mà không cần cấu hình ph
    ```python
    !pip install opencv-python tensorflow keras numpy pandas scikit-learn matplotlib seaborn plotly gtts
    ```
-3. **Kết nối với GPU (tùy chọn):** Vào `Runtime` > `Change runtime type` > Chọn `GPU` để tăng tốc độ huấn luyện.
-4. **Chạy từng ô lệnh theo thứ tự** trong notebook để huấn luyện và kiểm tra mô hình.
+3. **Tải dữ liệu ASL Alphabet:**
+   ```python
+   !kaggle datasets download -d grassknoted/asl-alphabet
+   !unzip asl-alphabet.zip -d data/
+   ```
+4. **Kết nối với GPU (tùy chọn):** Vào `Runtime` > `Change runtime type` > Chọn `GPU` để tăng tốc độ huấn luyện.
+5. **Chạy từng ô lệnh theo thứ tự** trong notebook để huấn luyện và kiểm tra mô hình.
 
 ### Chạy trên máy tính cá nhân (Visual Studio Code)
 Nếu chạy trên Visual Studio Code hoặc môi trường cục bộ:
@@ -85,9 +97,9 @@ pip install -r requirements.txt
 
 ### 2. Chạy chương trình
 #### Trên Google Colab:
-- **Huấn luyện mô hình:**
+- **Huấn luyện mô hình CNN/Xception:**
   ```python
-  !python train_model.py
+  !python train_model.py --model xception
   ```
 - **Nhận diện cử chỉ từ ảnh:**
   ```python
@@ -105,18 +117,5 @@ pip install -r requirements.txt
 #### Trên máy tính cá nhân:
 - **Huấn luyện mô hình:**
   ```sh
-  python train_model.py
+  python train_model.py --model xception
   ```
-- **Nhận diện cử chỉ từ ảnh:**
-  ```sh
-  python recognize_image.py --image path/to/image.jpg
-  ```
-- **Nhận diện cử chỉ từ video:**
-  ```sh
-  python recognize_video.py --video path/to/video.mp4
-  ```
-- **Chạy ứng dụng giao diện:**
-  ```sh
-  python app.py
-  ```
-(Nếu ứng dụng có giao diện web, mở trình duyệt và truy cập `http://localhost:5000/`.)
