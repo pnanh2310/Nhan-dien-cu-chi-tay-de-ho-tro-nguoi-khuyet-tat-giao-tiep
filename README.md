@@ -116,7 +116,7 @@ pip install -r requirements.txt
   ```
 
   ### Phân chia công việc:
-  
+  ```Nhóm gồm 3 người:
   ```Phong Ngọc Anh (nhóm trưởng): Phát triển toàn bộ mã nguồn, triển khai dự án, thuyết trình, Làm Power Point
   ```Bùi Trung Quân: Hỗ trợ làm Power Point, quay Video, Github
   ```Vũ Đức Toàn: Biên soạn tài liệu Overleaf
