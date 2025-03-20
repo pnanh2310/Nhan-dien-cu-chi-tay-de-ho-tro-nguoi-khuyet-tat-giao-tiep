@@ -24,8 +24,99 @@ Với sự phát triển của trí tuệ nhân tạo (AI) và thị giác máy 
 - **Chuyển đổi giọng nói:** Sau khi nhận diện, hệ thống phát âm thanh tương ứng với ký hiệu.
 - **Lưu và sử dụng lại mô hình:** Mô hình được lưu lại để sử dụng sau mà không cần huấn luyện lại.
 
-## 📦 Các thư viện Python cần thiết
+## 🖥️ Công nghệ sử dụng
+
+Hệ thống này được xây dựng với các công nghệ và thư viện sau:
+
+### Trí tuệ nhân tạo (AI) & Học sâu (Deep Learning)
+- **TensorFlow & Keras:** Huấn luyện và triển khai mô hình nhận diện cử chỉ tay.
+- **Scikit-learn:** Hỗ trợ tiền xử lý dữ liệu và đánh giá mô hình.
+
+### Thị giác máy tính (Computer Vision)
+- **OpenCV:** Xử lý hình ảnh và video để phát hiện và nhận diện cử chỉ tay.
+
+### Phân tích và trực quan hóa dữ liệu
+- **NumPy & Pandas:** Xử lý và quản lý dữ liệu.
+- **Matplotlib, Seaborn, Plotly:** Vẽ biểu đồ để theo dõi quá trình huấn luyện.
+
+### Xử lý ngôn ngữ tự nhiên (NLP) & Tổng hợp giọng nói
+- **gTTS (Google Text-to-Speech):** Chuyển đổi văn bản thành giọng nói sau khi nhận diện ký hiệu.
+
+### Lưu và sử dụng lại mô hình
+- TensorFlow/Keras hỗ trợ lưu mô hình đã huấn luyện để sử dụng lại mà không cần huấn luyện từ đầu.
+
+## 📚 Các thư viện Python cần thiết
 
 Cài đặt các thư viện bằng lệnh sau:
 ```sh
 pip install opencv-python tensorflow keras numpy pandas scikit-learn matplotlib seaborn plotly gtts
+```
+
+## ⚙️ Yêu cầu hệ thống
+
+### Chạy trên Google Colab
+Hệ thống có thể chạy trên Google Colab mà không cần cấu hình phức tạp. Chỉ cần tải notebook lên và chạy các ô lệnh theo thứ tự.
+
+#### Hướng dẫn chạy trên Google Colab:
+1. **Tải notebook lên Colab:** Mở [Google Colab](https://colab.research.google.com/), chọn `Upload` và tải file `.ipynb` của bạn lên.
+2. **Cài đặt thư viện:** Chạy ô lệnh sau trong Colab để cài đặt thư viện:
+   ```python
+   !pip install opencv-python tensorflow keras numpy pandas scikit-learn matplotlib seaborn plotly gtts
+   ```
+3. **Kết nối với GPU (tùy chọn):** Vào `Runtime` > `Change runtime type` > Chọn `GPU` để tăng tốc độ huấn luyện.
+4. **Chạy từng ô lệnh theo thứ tự** trong notebook để huấn luyện và kiểm tra mô hình.
+
+### Chạy trên máy tính cá nhân (Visual Studio Code)
+Nếu chạy trên Visual Studio Code hoặc môi trường cục bộ:
+- **Python 3.7 trở lên**
+- **Cài đặt đầy đủ thư viện cần thiết** (xem mục "Các thư viện Python cần thiết")
+- **GPU (tùy chọn):** Nếu có GPU, cài đặt CUDA để tăng tốc huấn luyện mô hình
+
+## 🚀 Hướng dẫn cài đặt và chạy chương trình
+
+### 1. Cài đặt môi trường
+Nếu chưa có Python, hãy tải và cài đặt Python 3.7 trở lên từ [python.org](https://www.python.org/).
+
+Sau đó, cài đặt các thư viện cần thiết bằng lệnh:
+```sh
+pip install -r requirements.txt
+```
+(Nếu không có `requirements.txt`, dùng lệnh `pip install opencv-python tensorflow keras numpy pandas scikit-learn matplotlib seaborn plotly gtts`.)
+
+### 2. Chạy chương trình
+#### Trên Google Colab:
+- **Huấn luyện mô hình:**
+  ```python
+  !python train_model.py
+  ```
+- **Nhận diện cử chỉ từ ảnh:**
+  ```python
+  !python recognize_image.py --image path/to/image.jpg
+  ```
+- **Nhận diện cử chỉ từ video:**
+  ```python
+  !python recognize_video.py --video path/to/video.mp4
+  ```
+- **Chạy ứng dụng giao diện:**
+  ```python
+  !python app.py
+  ```
+
+#### Trên máy tính cá nhân:
+- **Huấn luyện mô hình:**
+  ```sh
+  python train_model.py
+  ```
+- **Nhận diện cử chỉ từ ảnh:**
+  ```sh
+  python recognize_image.py --image path/to/image.jpg
+  ```
+- **Nhận diện cử chỉ từ video:**
+  ```sh
+  python recognize_video.py --video path/to/video.mp4
+  ```
+- **Chạy ứng dụng giao diện:**
+  ```sh
+  python app.py
+  ```
+(Nếu ứng dụng có giao diện web, mở trình duyệt và truy cập `http://localhost:5000/`.)
