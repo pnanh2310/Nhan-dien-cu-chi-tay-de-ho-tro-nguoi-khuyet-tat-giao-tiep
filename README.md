@@ -1,7 +1,7 @@
 # XÂY DỰNG HỆ THỐNG NHẬN DIỆN CỬ CHỈ TAY HỖ TRỢ NGƯỜI KHUYẾT TẬT GIAO TIẾP
 
 <p align="center">
-  <img src="images/logoDaiNam.png" alt="DaiNam University Logo" width="200"/>
+  <img src="logoDaiNam.png" alt="DaiNam University Logo" width="200"/>
   <img src="LogoAIoTLab.png" alt="AIoTLab Logo" width="170"/>
 </p>
 
