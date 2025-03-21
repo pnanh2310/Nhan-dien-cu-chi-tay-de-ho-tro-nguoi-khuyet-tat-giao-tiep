@@ -102,8 +102,36 @@ pip install -r requirements.txt
 - [Link tải](https://www.kaggle.com/datasets/grassknoted/asl-alphabet)
 - **Bước 2: Tải thư viện**
   ```python
-  !pip install tensorflow opencv-python gtts scikit-learn seaborn``
+  !pip install tensorflow opencv-python gtts scikit-learn seaborn
   ```
+- **Bước 3: Gắn link dataset**
+  ```python
+  data='/content/asl_data/asl_alphabet_train/asl_alphabet_train'
+  ```
+- **Bước 4: Chia ra làm 3 để huấn luyện: 80% train, 10% test, 10% val**
+  ```python
+  from sklearn.model_selection import train_test_split
+  train_df, dummy_df = train_test_split(df,  train_size= 0.8, shuffle= True, random_state= 42)
+  valid_df, test_df = train_test_split(dummy_df,  train_size= 0.5, shuffle= True, random_state= 42)
+  ```
+- **Bước 5: Xây dựng mô hình Xception, CNN và huấn luyện AI**
+  ```python
+  base_model = tf.keras.applications.xception.Xception(weights= 'imagenet' ,include_top = False , input_shape = (150,150,3) ,pooling = 'max' )
+  model = Sequential([
+    BatchNormalization(),
+    Dense(256,activation = 'relu'),
+    Dropout(.5),
+    Dense(29 , activation= 'softmax' )
+])
+model.compile(Adamax(learning_rate = 0.001) , loss = 'categorical_crossentropy' , metrics= ['accuracy'])
+history = model.fit(
+    x= train_generator ,
+    validation_data= valid_generator ,
+    epochs= 5 , verbose = 1 ,
+    validation_steps= None, shuffle= False
+)
+```
+  
 #Warnings
 import warnings
 warnings.filterwarnings('ignore')
