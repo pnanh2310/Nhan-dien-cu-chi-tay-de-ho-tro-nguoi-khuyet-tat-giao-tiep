@@ -100,8 +100,8 @@ pip install -r requirements.txt
 #### Trên Google Colab: (Dự đoán bằng ảnh và video)
 - **Bước 1: Tải Dataset**
 - [Link tải](https://www.kaggle.com/datasets/grassknoted/asl-alphabet)
-- **Bước 2: Tải thư viện và khai báo**
-- !pip install tensorflow opencv-python gtts scikit-learn seaborn
+- **Bước 2: Tải thư viện**
+  ```!pip install tensorflow opencv-python gtts scikit-learn seaborn``
 
 #Warnings
 import warnings
