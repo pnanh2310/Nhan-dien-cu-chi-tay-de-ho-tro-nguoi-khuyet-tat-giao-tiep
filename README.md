@@ -66,7 +66,7 @@ pip install opencv-python tensorflow keras numpy pandas scikit-learn matplotlib 
 Hệ thống có thể chạy trên Google Colab mà không cần cấu hình phức tạp. Chỉ cần tải notebook lên và chạy các ô lệnh theo thứ tự.
 
 #### Hướng dẫn chạy trên Google Colab:
-1. **Tải notebook lên Colab:** Mở [Google Colab](https://colab.research.google.com/drive/1168Y2dzgFTMZHrBGYqPZRC3TRRziJFbn?usp=sharing#scrollTo=XMNa-EjUUeR3).
+1. **Tải notebook lên Colab:** Mở [Google Colab](https://colab.research.google.com/).
 2. **Cài đặt thư viện:** Chạy ô lệnh sau trong Colab để cài đặt thư viện:
    ```python
    !pip install opencv-python tensorflow keras numpy pandas scikit-learn matplotlib seaborn plotly gtts
@@ -97,7 +97,7 @@ pip install -r requirements.txt
 (Nếu không có `requirements.txt`, dùng lệnh `pip install opencv-python tensorflow keras numpy pandas scikit-learn matplotlib seaborn plotly gtts`.)
 
 ### 2. Chạy chương trình
-#### Trên Google Colab: (Dự đoán bằng ảnh và video)
+#### Trên Google Colab: (Dự đoán bằng ảnh và video) [Colab của tôi](https://colab.research.google.com/drive/1168Y2dzgFTMZHrBGYqPZRC3TRRziJFbn?usp=sharing#scrollTo=gbzEhmQlURiy).
 - **Bước 1: Tải Dataset**
 - [Link tải](https://www.kaggle.com/datasets/grassknoted/asl-alphabet)
 - **Bước 2: Tải thư viện**
