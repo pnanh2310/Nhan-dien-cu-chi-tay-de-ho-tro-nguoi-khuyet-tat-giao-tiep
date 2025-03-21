@@ -131,28 +131,49 @@ pip install -r requirements.txt
     validation_steps= None, shuffle= False
   )
   ```
+- **Bước 6: Tích hợp Text-to-speech**
+  ```python
+  !pip install gTTS # install the missing gTTS module
+  from gtts import gTTS # import the gTTS module to make it accessible
+  from IPython.display import Audio # Import Audio to play the output
+  import IPython.display as ipd # import the ipd to be used later
+  def text_to_speech(text, lang='en'):
+    tts = gTTS(text=text, lang=lang)
+    tts.save("output.mp3")
+    ipd.display(ipd.Audio("output.mp3", autoplay=True))
+  ```
+- **Bước 7: Dự đoán hình ảnh**
+  ```python
+    class_labels = list(train_generator.class_indices.keys())
+
+    def predict_sign(model, img_path):
+    # Load và xử lý ảnh
+    img = cv2.imread(img_path)
+    img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+    img = cv2.resize(img, (150, 150))
+    img = img / 255.0  # Chuẩn hóa về [0, 1]
+    img = np.expand_dims(img, axis=0)  # Thêm batch dimension
+    predictions = model.predict(img)
+    predicted_class = np.argmax(predictions)
+    confidence = np.max(predictions)
+    label = class_labels[predicted_class]
+    return label, confidence, img # Return the image as well
+    import matplotlib.pyplot as plt
+    test_image = '/content/asl_data/asl_alphabet_test/asl_alphabet_test/A_test.jpg'  # Đổi path tới hình bạn muốn test
+    label, confidence, img = predict_sign(model, test_image) # Get the image from the function
+    print(f"Dự đoán: {label}, Độ tin cậy: {confidence:.2f}")
+    plt.imshow(img[0]) # Display the image using matplotlib
+    plt.title(f"Predicted: {label}")
+    plt.axis('off')
+    plt.show()
+    text_to_speech(label)
+  ```
+
+
+
+
   
-#Warnings
-import warnings
-warnings.filterwarnings('ignore')
 
-
-- **Huấn luyện mô hình CNN/Xception:**
-  ```python
-  !python train_model.py --model xception
-  ```
-- **Nhận diện cử chỉ từ ảnh:**
-  ```python
-  !python recognize_image.py --image path/to/image.jpg
-  ```
-- **Nhận diện cử chỉ từ video:**
-  ```python
-  !python recognize_video.py --video path/to/video.mp4
-  ```
-- **Chạy ứng dụng giao diện:**
-  ```python
-  !python app.py
-  ```
 #### Trên Python: (Dự đoán bằng Camera)
 - **Huấn luyện mô hình CNN/Xception:** (Do đã có File huấn luyện từ trước có thể bỏ qua bước này)
 -  Chạy File train.py
