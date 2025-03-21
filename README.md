@@ -106,7 +106,39 @@ pip install -r requirements.txt
   ```
 - **Bước 3: Gắn link dataset**
   ```python
+  import os
   data='/content/asl_data/asl_alphabet_train/asl_alphabet_train'
+  
+  def create_dataframe(data_path):
+      # List to store filepaths and labels
+      filepaths = []
+      labels = []
+  
+      # List all subfolders in the current data path
+      folds = os.listdir(data_path)
+  
+      # Iterate through each subfolder
+      for fold in folds:
+          f_path = os.path.join(data_path, fold)
+          imgs = os.listdir(f_path)
+  
+          # Iterate through images in the subfolder
+          for img in imgs:
+              img_path = os.path.join(f_path, img)
+  
+              # Append image path and corresponding label
+              filepaths.append(img_path)
+              labels.append(fold)
+  
+      # Create Pandas Series for filepaths and labels
+      fseries = pd.Series(filepaths, name='Filepaths')
+      lseries = pd.Series(labels, name='Labels')
+  
+      # Concatenate into a DataFrame and return
+      return pd.concat([fseries, lseries], axis=1)
+
+  # Create DataFrames for train, test, and val
+  df = create_dataframe(data)
   ```
 - **Bước 4: Chia ra làm 3 để huấn luyện: 80% train, 10% test, 10% val**
   ```python
