@@ -97,7 +97,9 @@ pip install -r requirements.txt
 (Nếu không có `requirements.txt`, dùng lệnh `pip install opencv-python tensorflow keras numpy pandas scikit-learn matplotlib seaborn plotly gtts`.)
 
 ### 2. Chạy chương trình
-#### Trên Google Colab:
+#### Trên Google Colab: (Dự đoán bằng ảnh và video)
+- **Bước 1: Tải Dataset**
+- [Link tải](https://www.kaggle.com/datasets/grassknoted/asl-alphabet).
 - **Huấn luyện mô hình CNN/Xception:**
   ```python
   !python train_model.py --model xception
@@ -114,15 +116,15 @@ pip install -r requirements.txt
   ```python
   !python app.py
   ```
-#### Trên Python:
-- **Huấn luyện mô hình CNN/Xception:**
+#### Trên Python: (Dự đoán bằng Camera)
+- **Huấn luyện mô hình CNN/Xception:** (Do đã có File huấn luyện từ trước có thể bỏ qua bước này)
   ```Chạy File train.py
 - **Nhận diện cử chỉ từ Camera:**
   ```Chạy File predict.py
 
 
   ### Phân chia công việc:
-  Phong Ngọc Anh (nhóm trưởng): Phát triển toàn bộ mã nguồn, triển khai dự án, thuyết trình, Làm Power Point
+  Phong Ngọc Anh (nhóm trưởng): Phát triển toàn bộ mã nguồn, triển khai dự án, đề xuất cải tiến, kiếm thử, thực hiện video giới thiệu, thuyết trình, Làm Power Point, Github
   
   Bùi Trung Quân: Hỗ trợ làm Power Point, chỉnh sửa Video, Github
   
