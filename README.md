@@ -99,7 +99,30 @@ pip install -r requirements.txt
 ### 2. Chạy chương trình
 #### Trên Google Colab: (Dự đoán bằng ảnh và video)
 - **Bước 1: Tải Dataset**
-- [Link tải](https://www.kaggle.com/datasets/grassknoted/asl-alphabet).
+- [Link tải](https://www.kaggle.com/datasets/grassknoted/asl-alphabet)
+- **Bước 2: Tải thư viện và khai báo**
+- !pip install tensorflow opencv-python gtts scikit-learn seaborn
+- import cv2
+import seaborn as sns
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+import plotly.express as px
+sns.set_style('whitegrid')
+from sklearn.metrics import confusion_matrix , classification_report
+import tensorflow as tf
+from tensorflow import keras
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense , Flatten , Conv2D , MaxPooling2D , Dropout , Activation , BatchNormalization
+from tensorflow.keras.preprocessing.image import ImageDataGenerator
+from tensorflow.keras.optimizers import Adam , Adamax
+from tensorflow.keras import regularizers
+
+#Warnings
+import warnings
+warnings.filterwarnings('ignore')
+
+
 - **Huấn luyện mô hình CNN/Xception:**
   ```python
   !python train_model.py --model xception
