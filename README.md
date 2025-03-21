@@ -168,12 +168,6 @@ pip install -r requirements.txt
     plt.show()
     text_to_speech(label)
   ```
-
-
-
-
-  
-
 #### Trên Python: (Dự đoán bằng Camera)
 - **Huấn luyện mô hình CNN/Xception:** (Do đã có File huấn luyện từ trước có thể bỏ qua bước này)
 -  Chạy File train.py
