@@ -122,15 +122,15 @@ pip install -r requirements.txt
     Dense(256,activation = 'relu'),
     Dropout(.5),
     Dense(29 , activation= 'softmax' )
-])
-model.compile(Adamax(learning_rate = 0.001) , loss = 'categorical_crossentropy' , metrics= ['accuracy'])
-history = model.fit(
+  ])
+  model.compile(Adamax(learning_rate = 0.001) , loss = 'categorical_crossentropy' , metrics= ['accuracy'])
+  history = model.fit(
     x= train_generator ,
     validation_data= valid_generator ,
     epochs= 5 , verbose = 1 ,
     validation_steps= None, shuffle= False
-)
-```
+  )
+  ```
   
 #Warnings
 import warnings
