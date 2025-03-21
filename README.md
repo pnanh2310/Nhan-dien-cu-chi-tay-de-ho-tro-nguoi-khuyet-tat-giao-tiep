@@ -114,6 +114,12 @@ pip install -r requirements.txt
   ```python
   !python app.py
   ```
+#### Trên Python:
+- **Huấn luyện mô hình CNN/Xception:**
+  ```Chạy File train.py
+- **Nhận diện cử chỉ từ Camera:**
+  ```Chạy File predict.py
+
 
   ### Phân chia công việc:
   Phong Ngọc Anh (nhóm trưởng): Phát triển toàn bộ mã nguồn, triển khai dự án, thuyết trình, Làm Power Point
